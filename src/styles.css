@@ -1,0 +1,192 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * KIRMARY International L.L.C. — design system.
+ * Industrial corporate palette: deep navy, metallic steel grey, safety amber accent.
+ * All colors use oklch. Semantic tokens map to Tailwind utilities.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-sans: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand palette */
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-steel-50: var(--steel-50);
+  --color-steel-100: var(--steel-100);
+  --color-steel-200: var(--steel-200);
+  --color-steel-300: var(--steel-300);
+  --color-steel-400: var(--steel-400);
+  --color-steel-500: var(--steel-500);
+  --color-steel-600: var(--steel-600);
+  --color-safety-500: var(--safety-500);
+  --color-safety-600: var(--safety-600);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Brand tokens */
+  --navy-950: oklch(0.17 0.042 258);
+  --navy-900: oklch(0.23 0.052 258);
+  --navy-800: oklch(0.3 0.058 258);
+  --navy-700: oklch(0.4 0.062 258);
+  --steel-50: oklch(0.987 0.003 255);
+  --steel-100: oklch(0.966 0.006 252);
+  --steel-200: oklch(0.932 0.009 252);
+  --steel-300: oklch(0.862 0.012 252);
+  --steel-400: oklch(0.72 0.016 252);
+  --steel-500: oklch(0.56 0.018 252);
+  --steel-600: oklch(0.44 0.02 252);
+  --safety-500: oklch(0.74 0.15 58);
+  --safety-600: oklch(0.64 0.15 58);
+
+  /* Semantic shadcn tokens mapped to the brand */
+  --background: var(--steel-100);
+  --foreground: var(--navy-950);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--navy-950);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--navy-950);
+  --primary: var(--navy-900);
+  --primary-foreground: oklch(0.985 0.003 255);
+  --secondary: var(--steel-200);
+  --secondary-foreground: var(--navy-900);
+  --muted: var(--steel-200);
+  --muted-foreground: var(--steel-600);
+  --accent: var(--steel-200);
+  --accent-foreground: var(--navy-900);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: var(--steel-300);
+  --input: var(--steel-300);
+  --ring: var(--navy-700);
+  --chart-1: var(--navy-800);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: var(--safety-500);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: var(--steel-100);
+  --sidebar-foreground: var(--navy-950);
+  --sidebar-primary: var(--navy-900);
+  --sidebar-primary-foreground: oklch(0.985 0.003 255);
+  --sidebar-accent: var(--steel-200);
+  --sidebar-accent-foreground: var(--navy-900);
+  --sidebar-border: var(--steel-300);
+  --sidebar-ring: var(--navy-700);
+}
+
+.dark {
+  --background: var(--navy-950);
+  --foreground: var(--steel-100);
+  --card: var(--navy-900);
+  --card-foreground: var(--steel-100);
+  --popover: var(--navy-900);
+  --popover-foreground: var(--steel-100);
+  --primary: var(--safety-500);
+  --primary-foreground: var(--navy-950);
+  --secondary: var(--navy-800);
+  --secondary-foreground: var(--steel-100);
+  --muted: var(--navy-800);
+  --muted-foreground: var(--steel-400);
+  --accent: var(--navy-800);
+  --accent-foreground: var(--steel-100);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: var(--navy-700);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: var(--navy-900);
+  --sidebar-foreground: var(--steel-100);
+  --sidebar-primary: var(--safety-500);
+  --sidebar-primary-foreground: var(--navy-950);
+  --sidebar-accent: var(--navy-800);
+  --sidebar-accent-foreground: var(--steel-100);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: var(--navy-700);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+}
+
+/* Industrial hazard-stripe accent used as a thin divider / hover detail. */
+@utility hazard-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--safety-500) 0 14px,
+    var(--navy-950) 14px 28px
+  );
+}

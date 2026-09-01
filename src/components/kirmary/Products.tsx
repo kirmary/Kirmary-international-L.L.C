@@ -4,37 +4,30 @@ import productValves from "@/assets/product-valves.jpg";
 import productHydrant from "@/assets/product-hydrant.jpg";
 import productCabinets from "@/assets/product-cabinets.jpg";
 
-import valvesFm from "@/assets/valves-fm.pdf";
-import valvesUl from "@/assets/valves-ul.pdf";
-import hydrantFm from "@/assets/hydrant-fm.pdf";
-import hydrantUl from "@/assets/hydrant-ul.pdf";
-import cabinetsFm from "@/assets/cabinets-fm.pdf";
-import cabinetsUl from "@/assets/cabinets-ul.pdf";
-
 const PRODUCTS = [
   {
     title: "Kirmary Valves",
     image: productValves,
     alt: "Kirmary industrial gate valves product photo",
     description: "UL&FM certified.",
-    fmLink: valvesFm,
-    ulLink: valvesUl,
+    fmLink: "/src/assets/valves-fm.pdf",
+    ulLink: "/src/assets/valves-ul.pdf",
   },
   {
     title: "Kirmary Hydrant",
     image: productHydrant,
     alt: "Kirmary fire hydrant product photo",
     description: "UL&FM certified.",
-    fmLink: hydrantFm,
-    ulLink: hydrantUl,
+    fmLink: "/src/assets/hydrant-fm.pdf",
+    ulLink: "/src/assets/hydrant-ul.pdf",
   },
   {
     title: "Kirmary Cabinets",
     image: productCabinets,
     alt: "Kirmary safety storage cabinet product photo",
     description: "UL&FM certified.",
-    fmLink: cabinetsFm,
-    ulLink: cabinetsUl,
+    fmLink: "/src/assets/cabinets-fm.pdf",
+    ulLink: "/src/assets/cabinets-ul.pdf",
   },
 ];
 
@@ -84,7 +77,7 @@ export function Products() {
                   {product.description}
                 </p>
               
-                {/* مربعات الروابط التفاعلية لفتح ملفات الـ PDF الخاصة بكل منتج */}
+                {/* مربعات الروابط التفاعلية لفتح ملفات الشهادات */}
                 <div className="grid grid-cols-2 gap-3 mt-6 pt-4 border-t border-steel-200">
                   <a
                     href={product.fmLink}

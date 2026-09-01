@@ -4,27 +4,37 @@ import productValves from "@/assets/product-valves.jpg";
 import productHydrant from "@/assets/product-hydrant.jpg";
 import productCabinets from "@/assets/product-cabinets.jpg";
 
+import valvesFm from "@/assets/valves-fm.pdf";
+import valvesUl from "@/assets/valves-ul.pdf";
+import hydrantFm from "@/assets/hydrant-fm.pdf";
+import hydrantUl from "@/assets/hydrant-ul.pdf";
+import cabinetsFm from "@/assets/cabinets-fm.pdf";
+import cabinetsUl from "@/assets/cabinets-ul.pdf";
+
 const PRODUCTS = [
   {
     title: "Kirmary Valves",
     image: productValves,
     alt: "Kirmary industrial gate valves product photo",
-    description:
-      "UL&FM certified.",
+    description: "UL&FM certified.",
+    fmLink: valvesFm,
+    ulLink: valvesUl,
   },
   {
     title: "Kirmary Hydrant",
     image: productHydrant,
     alt: "Kirmary fire hydrant product photo",
-    description:
-      "UL&FM certified.",
+    description: "UL&FM certified.",
+    fmLink: hydrantFm,
+    ulLink: hydrantUl,
   },
   {
     title: "Kirmary Cabinets",
     image: productCabinets,
     alt: "Kirmary safety storage cabinet product photo",
-    description:
-      "UL&FM certified.",
+    description: "UL&FM certified.",
+    fmLink: cabinetsFm,
+    ulLink: cabinetsUl,
   },
 ];
 
@@ -56,7 +66,6 @@ export function Products() {
             >
               <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-1 origin-left scale-x-0 hazard-stripe transition-transform duration-300 group-hover:scale-x-100" />
               
-              {/* تم تعديل حاوية الصورة وإضافة خلفية بيضاء/خفيفة مع object-contain لتظهر الصورة كاملة */}
               <div className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden bg-steel-50 p-4">
                 <img
                   src={product.image}
@@ -71,10 +80,34 @@ export function Products() {
                 <h3 className="font-display text-2xl font-semibold uppercase tracking-wide text-navy-950">
                   {product.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-steel-600">
+                <p className="mt-2 text-sm leading-relaxed text-steel-600">
                   {product.description}
                 </p>
               
+                {/* مربعات الروابط التفاعلية لفتح ملفات الـ PDF الخاصة بكل منتج */}
+                <div className="grid grid-cols-2 gap-3 mt-6 pt-4 border-t border-steel-200">
+                  <a
+                    href={product.fmLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-steel-50 border border-safety-500/30 hover:border-safety-500 hover:bg-safety-500/5 rounded p-2 text-center transition-colors cursor-pointer"
+                  >
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-navy-950 block">
+                      FM Approvals
+                    </span>
+                  </a>
+                  <a
+                    href={product.ulLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-steel-50 border border-safety-500/30 hover:border-safety-500 hover:bg-safety-500/5 rounded p-2 text-center transition-colors cursor-pointer"
+                  >
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-navy-950 block">
+                      UL Certificates
+                    </span>
+                  </a>
+                </div>
+
               </div>
             </article>
           ))}
